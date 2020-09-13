@@ -2,11 +2,19 @@ package de.ft.neopxiel;
 
 import com.kotcrab.vis.ui.widget.VisLabel;
 import com.kotcrab.vis.ui.widget.VisTable;
+import de.ft.interitus.compiler.Compiler;
+import de.ft.interitus.compiler.Interitus.Arduino.ArduinoCompiler;
+import de.ft.interitus.events.EventVar;
+import de.ft.interitus.events.global.GlobalCompilingStartEvent;
+import de.ft.interitus.events.global.GlobalEventAdapter;
 import de.ft.interitus.plugin.Plugin;
+import de.ft.interitus.projecttypes.BlockTypes.Interitus.Arduino.ArduinoVariable;
 import de.ft.interitus.projecttypes.BlockTypes.Interitus.Arduino.InitArduino;
 import de.ft.interitus.projecttypes.BlockTypes.PlatformSpecificBlock;
+import de.ft.interitus.projecttypes.ProjectManager;
 import de.ft.interitus.projecttypes.Tool;
 import de.ft.neopxiel.NeopixelBlocks.InitBlock.InitBlock;
+import de.ft.neopxiel.NeopixelBlocks.InitBlock.SetPixelColor;
 
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -18,6 +26,23 @@ public class Addon implements de.ft.interitus.projecttypes.Addons.Addon {
     public Addon(Plugin plugin) {
         this.plugin = plugin;
         blocks.add(new InitBlock(InitArduino.arduino,this));
+        blocks.add(new SetPixelColor(InitArduino.arduino,this));
+        EventVar.globalEventManager.addListener(new GlobalEventAdapter() {
+            @Override
+            public void compilingstarted(GlobalCompilingStartEvent e, Compiler compiler) {
+
+            System.out.println("Event");
+
+                if(ProjectManager.getActProjectVar().enabledAddons.contains(((Main) plugin).addon)) {
+                    Main.included = false;
+
+                    ArduinoCompiler.installlibery.add("Adafruit Neopixel");
+                }
+
+
+            }
+        });
+
 
     }
     @Override

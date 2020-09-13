@@ -5,10 +5,11 @@ import de.ft.interitus.plugin.PluginAssetManager;
 import de.ft.interitus.plugin.ProgramRegistry;
 
 public class Main implements Plugin {
-
+public static  boolean included = false;
+public Addon addon =new Addon(this);
     @Override
     public boolean register(ProgramRegistry programRegistry) {
-        programRegistry.registerAddon(new Addon(this),this);
+        programRegistry.registerAddon(addon,this);
         return false;
 
     }

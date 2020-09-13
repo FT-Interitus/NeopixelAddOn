@@ -12,21 +12,27 @@ import de.ft.interitus.utils.ArrayList;
 import de.ft.neopxiel.Main;
 
 
-
-public class InitBlockModi implements BlockModi, ArduinoBlock {
+public class SetPixelColorModi implements BlockModi, ArduinoBlock {
     ArrayList<Parameter> parameters = new ArrayList<>();
-    Parameter pin;
-    Parameter Numpixel;
+    Parameter pixel;
+    Parameter color_r;
+    Parameter color_g;
+    Parameter color_b;
+
    // Parameter Name; //todo multiple instances
 
-    public InitBlockModi() {
+    public SetPixelColorModi() {
 
-        pin = new Parameter("",AssetLoader.Parameter_Pin,"Pin","","",new ParameterType(InitArduino.floatvar,false,false),true);
-        Numpixel = new Parameter("",AssetLoader.Parameter_IO,"Anzahl","","",new ParameterType(InitArduino.floatvar,false,false),true);
+        pixel = new Parameter("",AssetLoader.Parameter_Pin,"Pixel","","",new ParameterType(InitArduino.floatvar,false,false),true);
+        color_r = new Parameter("",AssetLoader.Parameter_Pin,"Rot","","",new ParameterType(InitArduino.floatvar,false,false),true);
+        color_g = new Parameter("",AssetLoader.Parameter_Pin,"Grün","","",new ParameterType(InitArduino.floatvar,false,false),true);
+        color_b = new Parameter("",AssetLoader.Parameter_Pin,"Blau","","",new ParameterType(InitArduino.floatvar,false,false),true);
 
 
-        parameters.add(pin);
-        parameters.add(Numpixel);
+        parameters.add(pixel);
+        parameters.add(color_r);
+        parameters.add(color_g);
+        parameters.add(color_b);
         //parameters.add(Name); todo multiple instances
     }
 
@@ -48,30 +54,21 @@ public class InitBlockModi implements BlockModi, ArduinoBlock {
 
     @Override
     public String getname() {
-        return "InitModi";
+        return "SetPixelColor";
     }
 
     @Override
     public Texture getModiImage() {
-        return AssetLoader.img_startbutton_mouseover;
+        return AssetLoader.Parameter_IO;
     }
 
     @Override
     public String getCode() {
-        return "pixels.begin();";
+        return " pixels.setPixelColor("+pixel.getParameter()+", pixels.Color("+color_r.getParameter()+", "+color_g.getParameter()+", "+color_b.getParameter()+"));";
     }
 
     @Override
     public String getHeaderCode(boolean inserted) {
-        System.out.println("Included: "+ Main.included);
-        System.out.println("Inserted: "+inserted);
-        if (!Main.included||!inserted) {
-            if(inserted) {
-                Main.included = true;
-            }
-            return "#include <Adafruit_NeoPixel.h>\n"+ "#ifdef __AVR__\n"+ "#include <avr/power.h>\n" + "#endif\n"+ " #define PIN    " + pin.getParameter() + "\n#define NUMPIXELS " + Numpixel.getParameter() + "\nAdafruit_NeoPixel pixels(NUMPIXELS, PIN, NEO_GRB + NEO_KHZ800);";
-        } else {
-            return null;
-        }
+     return null;
     }
 }

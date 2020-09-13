@@ -7,24 +7,23 @@ import de.ft.interitus.projecttypes.BlockTypes.BlockCategories;
 import de.ft.interitus.projecttypes.BlockTypes.PlatformSpecificBlock;
 import de.ft.interitus.projecttypes.ProjectTypes;
 
-import java.awt.*;
-
-public class InitBlock extends PlatformSpecificBlock {
-    public InitBlock(ProjectTypes projectTypes, Addon addon) {
+public class SetPixelColor extends PlatformSpecificBlock {
+    public SetPixelColor(ProjectTypes projectTypes, Addon addon) {
         super(projectTypes, addon);
 
-        super.blockModis.add(new InitBlockModi());
+        super.blockModis.add(new SetPixelColorModi());
+        super.blockModis.add(new ShowPixel());
         super.actBlockModiIndex=0;
     }
 
     @Override
     public String getName() {
-        return "NeopixelInitBlock";
+        return "NeoPixelControll";
     }
 
     @Override
     public String getdescription() {
-        return "Dieser Block initialisiert neopixel";
+        return "";
     }
 
     @Override
@@ -35,7 +34,7 @@ public class InitBlock extends PlatformSpecificBlock {
 
     @Override
     public Texture getDescriptionImage() {
-        return AssetLoader.arduinonanoimage;
+        return AssetLoader.setup_description;
     }
 
     @Override

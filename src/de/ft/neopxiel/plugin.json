@@ -1,0 +1,9 @@
+{
+  "name": "Neopixel",
+  "domain": "de.ft.neopxiel",
+  "version": "1.0",
+  "description": "Shows Neopixel",
+  "author": "Felix & Tim",
+  "detailed_description": "Neopixel",
+  "required-plugins": []
+}

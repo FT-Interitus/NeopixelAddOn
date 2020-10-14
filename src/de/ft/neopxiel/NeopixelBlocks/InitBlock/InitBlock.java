@@ -5,13 +5,13 @@ import de.ft.interitus.loading.AssetLoader;
 import de.ft.interitus.projecttypes.Addons.Addon;
 import de.ft.interitus.projecttypes.BlockTypes.BlockCategories;
 import de.ft.interitus.projecttypes.BlockTypes.PlatformSpecificBlock;
-import de.ft.interitus.projecttypes.ProjectTypes;
+import de.ft.interitus.projecttypes.ProjectType;
 
 import java.awt.*;
 
 public class InitBlock extends PlatformSpecificBlock {
-    public InitBlock(ProjectTypes projectTypes, Addon addon) {
-        super(projectTypes, addon);
+    public InitBlock(ProjectType projectType, Addon addon) {
+        super(projectType, addon);
 
         super.blockModis.add(new InitBlockModi());
         super.actBlockModiIndex=0;

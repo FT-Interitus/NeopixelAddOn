@@ -4,7 +4,6 @@ import com.badlogic.gdx.graphics.Texture;
 import de.ft.interitus.Block.Parameter;
 import de.ft.interitus.Block.ParameterType;
 import de.ft.interitus.loading.AssetLoader;
-import de.ft.interitus.projecttypes.BlockTypes.BlockModi;
 import de.ft.interitus.projecttypes.BlockTypes.BlockSettings;
 import de.ft.interitus.projecttypes.BlockTypes.Interitus.Arduino.ArduinoBlock;
 import de.ft.interitus.projecttypes.BlockTypes.Interitus.Arduino.InitArduino;
@@ -13,7 +12,7 @@ import de.ft.neopxiel.Main;
 
 
 
-public class InitBlockModi implements BlockModi, ArduinoBlock {
+public class InitBlockModi extends ArduinoBlock {
     ArrayList<Parameter> parameters = new ArrayList<>();
     Parameter pin;
     Parameter Numpixel;

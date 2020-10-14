@@ -5,11 +5,11 @@ import de.ft.interitus.loading.AssetLoader;
 import de.ft.interitus.projecttypes.Addons.Addon;
 import de.ft.interitus.projecttypes.BlockTypes.BlockCategories;
 import de.ft.interitus.projecttypes.BlockTypes.PlatformSpecificBlock;
-import de.ft.interitus.projecttypes.ProjectTypes;
+import de.ft.interitus.projecttypes.ProjectType;
 
 public class SetPixelColor extends PlatformSpecificBlock {
-    public SetPixelColor(ProjectTypes projectTypes, Addon addon) {
-        super(projectTypes, addon);
+    public SetPixelColor(ProjectType projectType, Addon addon) {
+        super(projectType, addon);
 
         super.blockModis.add(new SetPixelColorModi());
         super.blockModis.add(new ShowPixel());

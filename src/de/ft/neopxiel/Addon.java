@@ -8,7 +8,6 @@ import de.ft.interitus.events.EventVar;
 import de.ft.interitus.events.global.GlobalCompilingStartEvent;
 import de.ft.interitus.events.global.GlobalEventAdapter;
 import de.ft.interitus.plugin.Plugin;
-import de.ft.interitus.projecttypes.BlockTypes.Interitus.Arduino.ArduinoVariable;
 import de.ft.interitus.projecttypes.BlockTypes.Interitus.Arduino.InitArduino;
 import de.ft.interitus.projecttypes.BlockTypes.PlatformSpecificBlock;
 import de.ft.interitus.projecttypes.ProjectManager;
@@ -17,7 +16,7 @@ import de.ft.neopxiel.NeopixelBlocks.InitBlock.InitBlock;
 import de.ft.neopxiel.NeopixelBlocks.InitBlock.SetPixelColor;
 
 import java.io.Serializable;
-import java.util.ArrayList;
+import de.ft.interitus.utils.ArrayList;
 
 public class Addon implements de.ft.interitus.projecttypes.Addons.Addon {
 
@@ -51,7 +50,7 @@ public class Addon implements de.ft.interitus.projecttypes.Addons.Addon {
     }
 
     @Override
-    public ArrayList<PlatformSpecificBlock> getaddBlocks() {
+    public de.ft.interitus.utils.ArrayList<PlatformSpecificBlock> getaddBlocks() {
         return blocks;
     }
 

@@ -2,16 +2,13 @@ package de.ft.neopxiel.NeopixelBlocks.InitBlock;
 
 import com.badlogic.gdx.graphics.Texture;
 import de.ft.interitus.Block.Parameter;
-import de.ft.interitus.Block.ParameterType;
 import de.ft.interitus.loading.AssetLoader;
-import de.ft.interitus.projecttypes.BlockTypes.BlockModi;
 import de.ft.interitus.projecttypes.BlockTypes.BlockSettings;
 import de.ft.interitus.projecttypes.BlockTypes.Interitus.Arduino.ArduinoBlock;
-import de.ft.interitus.projecttypes.BlockTypes.Interitus.Arduino.InitArduino;
 import de.ft.interitus.utils.ArrayList;
 
 
-public class ShowPixel implements BlockModi, ArduinoBlock {
+public class ShowPixel extends ArduinoBlock {
     ArrayList<Parameter> parameters = new ArrayList<>();
 
 

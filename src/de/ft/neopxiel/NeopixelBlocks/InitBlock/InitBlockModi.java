@@ -20,8 +20,8 @@ public class InitBlockModi extends ArduinoBlock {
 
     public InitBlockModi() {
 
-        pin = new Parameter("",AssetLoader.Parameter_Pin,"Pin","","",new ParameterType(InitArduino.floatvar,false,false),true);
-        Numpixel = new Parameter("",AssetLoader.Parameter_IO,"Anzahl","","",new ParameterType(InitArduino.floatvar,false,false),true);
+        pin = new Parameter("",AssetLoader.Parameter_Pin,"Pin","","",new ParameterType(InitArduino.floatvar,false),true);
+        Numpixel = new Parameter("",AssetLoader.Parameter_IO,"Anzahl","","",new ParameterType(InitArduino.floatvar,false),true);
 
 
         parameters.add(pin);

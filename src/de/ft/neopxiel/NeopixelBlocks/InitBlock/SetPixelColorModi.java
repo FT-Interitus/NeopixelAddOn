@@ -23,10 +23,10 @@ public class SetPixelColorModi extends ArduinoBlock {
 
     public SetPixelColorModi() {
 
-        pixel = new Parameter("",AssetLoader.Parameter_Pin,"Pixel","","",new ParameterType(InitArduino.floatvar,false,false),true);
-        color_r = new Parameter("",AssetLoader.Parameter_Pin,"Rot","","",new ParameterType(InitArduino.floatvar,false,false),true);
-        color_g = new Parameter("",AssetLoader.Parameter_Pin,"Grün","","",new ParameterType(InitArduino.floatvar,false,false),true);
-        color_b = new Parameter("",AssetLoader.Parameter_Pin,"Blau","","",new ParameterType(InitArduino.floatvar,false,false),true);
+        pixel = new Parameter("",AssetLoader.Parameter_Pin,"Pixel","","",new ParameterType(InitArduino.floatvar,false),true);
+        color_r = new Parameter("",AssetLoader.Parameter_Pin,"Rot","","",new ParameterType(InitArduino.floatvar,false),true);
+        color_g = new Parameter("",AssetLoader.Parameter_Pin,"Grün","","",new ParameterType(InitArduino.floatvar,false),true);
+        color_b = new Parameter("",AssetLoader.Parameter_Pin,"Blau","","",new ParameterType(InitArduino.floatvar,false),true);
 
 
         parameters.add(pixel);
